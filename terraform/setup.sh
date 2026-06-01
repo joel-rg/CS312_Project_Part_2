@@ -6,7 +6,7 @@ echo "Updating system packages"
 sudo apt update -y
 
 echo "Installing dependencies"
-sudo apt install -y openjdk-21-jre-headless wget screen
+sudo apt install -y openjdk-25-jre-headless wget screen
 
 echo "Creating minecraft user"
 sudo useradd -r -m -U -d /opt/minecraft -s /bin/bash minecraft || true
