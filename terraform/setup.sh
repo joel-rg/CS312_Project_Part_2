@@ -5,9 +5,11 @@ set -e
 echo "Updating system packages"
 sudo apt update -y
 
+# Installs Java 25.
 echo "Installing dependencies"
 sudo apt install -y openjdk-25-jre-headless wget screen
 
+# Creates system user for server.
 echo "Creating minecraft user"
 sudo useradd -r -m -U -d /opt/minecraft -s /bin/bash minecraft || true
 
@@ -16,12 +18,13 @@ sudo mkdir -p /opt/minecraft/server
 
 echo "Downloading server"
 cd /opt/minecraft/server
-
+# Gets the Minecraft server software.
 sudo wget https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar -O server.jar
 
 echo "Accepting Minecraft EULA"
 echo "eula=true" | sudo tee eula.txt
 
+# Sets the created user as the server owner.
 echo "Setting ownership"
 sudo chown -R minecraft:minecraft /opt/minecraft
 
