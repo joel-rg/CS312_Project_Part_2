@@ -117,7 +117,6 @@ Are not needed to supply the AWS credentials.
 The repository structure is as follows:
 
 ```txt
-README.md
 terraform
   |-- main.tf
   |-- outputs.tf
@@ -125,6 +124,7 @@ terraform
   |-- setup.sh
   |-- terraform.tfvars
   |-- variables.tf
+README.md
 ```
 
 The pipeline steps are as follows:
